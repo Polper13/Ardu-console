@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"name": "Ardu Console",
+			"path": "."
+		}
+	],
+	"settings": {}
+}
