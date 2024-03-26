@@ -4,13 +4,9 @@ void Drawer::drawFrame()
 {
     display.clearDisplay();
     
+    keyboard.update();
     keyboard.drawKeyboard(display);
     keyboard.drawCursor(display, frameIndex);
-
-    // display.setTextSize(1);
-    // display.setTextColor(WHITE);
-    // display.setCursor(0, 0);
-    // display.write("yo");
 
     display.display();
 }

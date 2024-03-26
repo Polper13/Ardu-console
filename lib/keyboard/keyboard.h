@@ -43,6 +43,7 @@ private:
 public:
     Keyboard();
 
+    void update();
     void drawKeyboard(Adafruit_SH1106& display);
     void drawCursor(Adafruit_SH1106& display, uint8_t frameIndex);
     void handleInput();
