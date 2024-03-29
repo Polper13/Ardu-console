@@ -1,37 +1,22 @@
 #include "drawer.h"
 
-void Drawer::drawFrame()
+void Drawer::drawFrame(Adafruit_SH1106& display, Keyboard& keyboard)
 {
     display.clearDisplay();
     
-    keyboard.update();
     keyboard.drawKeyboard(display);
     keyboard.drawCursor(display, frameIndex);
 
     display.display();
+
+    // update frame counter
+    if (frameIndex == 7)
+        frameIndex = 0;
+    else
+        frameIndex++;
 }
 
-Drawer::Drawer(uint8_t targetFPS)
-    :interval(1000 / targetFPS), display(4), keyboard() 
+Drawer::Drawer()
 {
-    display.begin(SH1106_SWITCHCAPVCC, 0x3C);
-    display.clearDisplay();
-
     frameIndex = 0;
-}
-
-void Drawer::checkForDraws()
-{
-    unsigned long currentMillis = millis();
-    if (currentMillis - previousMillis >= interval)
-    {
-        previousMillis = currentMillis;
-
-        if (frameIndex == 7)
-            frameIndex = 0;
-        else
-            frameIndex++;
-
-        drawFrame();
-    }
 }

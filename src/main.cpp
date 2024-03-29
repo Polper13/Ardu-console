@@ -1,15 +1,13 @@
 #include <Arduino.h>
+#include <Drawer.h>
+#include <Engine.h>
 
-#include <drawer.h>
 
-
-Drawer* drawer;
+Engine* enginePtr;
 
 void setup()
 {
-  Serial.begin(9600);
-
-  drawer = new Drawer(8);
+  enginePtr = new Engine(8);
 
   for (int i = 2; i <= 7; i++)
     pinMode(i, INPUT_PULLUP);
@@ -17,5 +15,5 @@ void setup()
 
 void loop()
 {
-  drawer->checkForDraws();
+  enginePtr->checkForUpdates();
 }

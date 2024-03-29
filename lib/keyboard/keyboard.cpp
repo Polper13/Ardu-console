@@ -21,6 +21,7 @@ void Keyboard::drawCursor(Adafruit_SH1106& display, uint8_t frameIndex)
         else
             yCalculated += 16;
 
+        // if cursor is on '='
         if (cursorX == 3 && cursorY >= 4)
         {
             display.drawBitmap(120, 52, cursorSymbol, 7, 7, WHITE);
