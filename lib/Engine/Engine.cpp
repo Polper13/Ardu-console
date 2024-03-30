@@ -15,6 +15,7 @@ void Engine::checkForUpdates()
 
         // updates
         input.update();
+        menu.update(input);
 
         // draw call
         drawer.drawFrame(keyboard, menu);

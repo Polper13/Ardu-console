@@ -2,6 +2,7 @@
 
 #include <Arduino.h>
 #include <Adafruit_SH1106.h>
+#include <Input.h>
 
 #define Epin 2
 #define Dpin 3
@@ -18,7 +19,7 @@ private:
         "Calculator",
         "Messenger",
         "Math solver",
-        "Twoj stary"
+        "Notes"
     };
 
     const uint8_t lastButtonIndex = 3;
@@ -28,5 +29,5 @@ public:
     Menu();
 
     void drawMenu(Adafruit_SH1106& display);
-    // void handleInput();
+    void update(Input& input);
 };

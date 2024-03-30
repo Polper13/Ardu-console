@@ -56,7 +56,12 @@ void Menu::drawMenu(Adafruit_SH1106& display)
     }
 }
 
-// void Menu::handleInput()
-// {
-//     if ()
-// }
+void Menu::update(Input& input)
+{
+    // handle input
+    if (input.wPressedDown && selectionIndex != 0)
+        selectionIndex--;
+    
+    if (input.sPressedDown && selectionIndex != lastButtonIndex)
+        selectionIndex++;
+}

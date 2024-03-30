@@ -16,11 +16,11 @@ private:
     uint8_t lastButtonStates[6];
     bool* pressedDownVariablesPtr[6] = 
     {
-        &wPressedDown,
-        &aPressedDown,
-        &sPressedDown,
-        &dPressedDown,
         &ePressedDown,
+        &dPressedDown,
+        &wPressedDown,
+        &sPressedDown,
+        &aPressedDown,
         &qPressedDown,
     };
 

@@ -19,11 +19,11 @@ void Input::update()
             else
                 *pressedDownVariablesPtr[i] = false;
 
-            lastButtonStates[i - 2] = LOW;
+            lastButtonStates[i] = LOW;
         }
         else
         {
-            lastButtonStates[i - 2] = HIGH;
+            lastButtonStates[i] = HIGH;
             *pressedDownVariablesPtr[i] = false;
         }
     }
