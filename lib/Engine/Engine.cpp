@@ -1,9 +1,9 @@
 #include "Engine.h"
 
 Engine::Engine(uint8_t targetUpdateRate)
-    :interval(1000 / targetUpdateRate), display(4), drawer(), keyboard()
+    :interval(1000 / targetUpdateRate), drawer(), keyboard()
 {
-    display.begin(SH1106_SWITCHCAPVCC, 0x3C);
+    
 }
 
 void Engine::checkForUpdates()
@@ -17,6 +17,6 @@ void Engine::checkForUpdates()
         keyboard.update();
 
         // draw call
-        drawer.drawFrame(display, keyboard);
+        drawer.drawFrame(keyboard);
     }
 }

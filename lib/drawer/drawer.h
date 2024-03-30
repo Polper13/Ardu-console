@@ -7,11 +7,11 @@
 
 class Drawer
 {
-private:
-    
 public:
+    Adafruit_SH1106 display;
     uint8_t frameIndex;
+
     Drawer();
 
-    void drawFrame(Adafruit_SH1106& display, Keyboard& keyboard);
+    void drawFrame(Keyboard& keyboard);
 };

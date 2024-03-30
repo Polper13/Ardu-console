@@ -1,6 +1,6 @@
 #include "drawer.h"
 
-void Drawer::drawFrame(Adafruit_SH1106& display, Keyboard& keyboard)
+void Drawer::drawFrame(Keyboard& keyboard)
 {
     display.clearDisplay();
     
@@ -17,6 +17,8 @@ void Drawer::drawFrame(Adafruit_SH1106& display, Keyboard& keyboard)
 }
 
 Drawer::Drawer()
+    :display(4)
 {
+    display.begin(SH1106_SWITCHCAPVCC, 0x3C);
     frameIndex = 0;
 }

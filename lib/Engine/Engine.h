@@ -3,6 +3,7 @@
 #include <Adafruit_SH1106.h>
 #include <Drawer.h>
 #include <keyboard.h>
+#include <Menu.h>
 
 class Engine
 {
@@ -11,7 +12,6 @@ private:
     const unsigned long interval;
 
 public:
-    Adafruit_SH1106 display;
     Drawer drawer;
     Keyboard keyboard;
 
