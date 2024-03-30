@@ -14,6 +14,7 @@ private:
 public:
     Drawer drawer;
     Keyboard keyboard;
+    Menu menu;
 
     Engine(uint8_t targetUpdateRate);
 

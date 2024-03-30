@@ -4,6 +4,7 @@
 
 #include <Adafruit_SH1106.h>
 #include <keyboard.h>
+#include <Menu.h>
 
 class Drawer
 {
@@ -13,5 +14,5 @@ public:
 
     Drawer();
 
-    void drawFrame(Keyboard& keyboard);
+    void drawFrame(Keyboard& keyboard, Menu& menu);
 };

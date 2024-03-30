@@ -1,11 +1,13 @@
 #include "drawer.h"
 
-void Drawer::drawFrame(Keyboard& keyboard)
+void Drawer::drawFrame(Keyboard& keyboard, Menu& menu)
 {
     display.clearDisplay();
     
-    keyboard.drawKeyboard(display);
-    keyboard.drawCursor(display, frameIndex);
+    // keyboard.drawKeyboard(display);
+    // keyboard.drawCursor(display, frameIndex);
+
+    menu.drawMenu(display);
 
     display.display();
 
