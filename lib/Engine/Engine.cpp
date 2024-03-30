@@ -1,7 +1,7 @@
 #include "Engine.h"
 
 Engine::Engine(uint8_t targetUpdateRate)
-    :interval(1000 / targetUpdateRate), drawer(), keyboard(), menu()
+    :interval(1000 / targetUpdateRate), drawer(), keyboard(), menu(), input()
 {
     
 }
@@ -14,7 +14,7 @@ void Engine::checkForUpdates()
         previousMillis = currentMillis;
 
         // updates
-        keyboard.update();
+        input.update();
 
         // draw call
         drawer.drawFrame(keyboard, menu);

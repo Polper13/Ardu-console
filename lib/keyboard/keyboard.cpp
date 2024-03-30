@@ -1,13 +1,7 @@
 #include "keyboard.h"
 #include "5x5characters.h"
 #include "customCharacters.h"
-#include <Adafruit_SH1106.h>
 
-
-void Keyboard::update()
-{
-    handleInput();
-}
 
 void Keyboard::drawCursor(Adafruit_SH1106& display, uint8_t frameIndex)
 {
@@ -74,51 +68,6 @@ void Keyboard::buttonQPressed()
     Serial.println("q pressed");
 }
 
-void Keyboard::handleInput()
-{
-    if (digitalRead(Epin) == LOW)
-    {
-        if (digitalRead(Epin) != lastStateE) { buttonEPressed(); }
-        lastStateE = LOW;
-    }
-    else { lastStateE = HIGH; }
-
-    if (digitalRead(Dpin) == LOW)
-    {
-        if (digitalRead(Dpin) != lastStateD) { buttonDPressed(); }
-        lastStateD = LOW;
-    }
-    else { lastStateD = HIGH; }
-
-    if (digitalRead(Wpin) == LOW)
-    {
-        if (digitalRead(Wpin) != lastStateW) { buttonWPressed(); }
-        lastStateW = LOW;
-    }
-    else { lastStateW = HIGH; }
-
-    if (digitalRead(Spin) == LOW)
-    {
-        if (digitalRead(Spin) != lastStateS) { buttonSPressed(); }
-        lastStateS = LOW;
-    }
-    else { lastStateS = HIGH; }
-
-    if (digitalRead(Apin) == LOW)
-    {
-        if (digitalRead(Apin) != lastStateA) { buttonAPressed(); }
-        lastStateA = LOW;
-    }
-    else { lastStateA = HIGH; }
-
-    if (digitalRead(Qpin) == LOW)
-    {
-        if (digitalRead(Qpin) != lastStateQ) { buttonQPressed(); }
-        lastStateQ = LOW;
-    }
-    else { lastStateQ = HIGH; }
-}
-
 void Keyboard::drawKeyboard(Adafruit_SH1106& display)
 {
     // arrow part
@@ -183,11 +132,4 @@ Keyboard::Keyboard()
 {
     cursorX = 0;
     cursorY = 0;
-
-    lastStateW = HIGH;
-    lastStateA = HIGH;
-    lastStateS = HIGH;
-    lastStateD = HIGH;
-    lastStateE = HIGH;
-    lastStateQ = HIGH;
 }

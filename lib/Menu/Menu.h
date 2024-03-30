@@ -3,6 +3,13 @@
 #include <Arduino.h>
 #include <Adafruit_SH1106.h>
 
+#define Epin 2
+#define Dpin 3
+#define Wpin 4
+#define Spin 5
+#define Apin 6
+#define Qpin 7
+
 class Menu
 {
 private:
@@ -21,4 +28,5 @@ public:
     Menu();
 
     void drawMenu(Adafruit_SH1106& display);
+    // void handleInput();
 };

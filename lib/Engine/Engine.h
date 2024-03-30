@@ -4,6 +4,7 @@
 #include <Drawer.h>
 #include <keyboard.h>
 #include <Menu.h>
+#include <Input.h>
 
 class Engine
 {
@@ -15,6 +16,7 @@ public:
     Drawer drawer;
     Keyboard keyboard;
     Menu menu;
+    Input input;
 
     Engine(uint8_t targetUpdateRate);
 

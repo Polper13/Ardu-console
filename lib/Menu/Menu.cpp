@@ -4,7 +4,7 @@
 
 Menu::Menu()
 {
-    selectionIndex = 3;
+    selectionIndex = 0;
 }
 
 void Menu::drawMenu(Adafruit_SH1106& display)
@@ -55,3 +55,8 @@ void Menu::drawMenu(Adafruit_SH1106& display)
         display.write(menuButtons[selectionIndex + 1]);
     }
 }
+
+// void Menu::handleInput()
+// {
+//     if ()
+// }

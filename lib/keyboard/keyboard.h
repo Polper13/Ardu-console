@@ -15,13 +15,6 @@ private:
     unsigned char cursorX;
     unsigned char cursorY;
 
-    unsigned char lastStateW;
-    unsigned char lastStateA;
-    unsigned char lastStateS;
-    unsigned char lastStateD;
-    unsigned char lastStateE;
-    unsigned char lastStateQ;
-
     const unsigned char keyboardLayout[24] =
     {
         '7', '8', '9', '/',
@@ -43,8 +36,6 @@ private:
 public:
     Keyboard();
 
-    void update();
     void drawKeyboard(Adafruit_SH1106& display);
     void drawCursor(Adafruit_SH1106& display, uint8_t frameIndex);
-    void handleInput();
 };
