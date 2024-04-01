@@ -3,10 +3,11 @@
 #include <Arduino.h>
 
 #include <Adafruit_SH1106.h>
-#include <keyboard.h>
+#include <Keyboard.h>
 #include <Menu.h>
+#include <Calculator.h>
 
-#include <dataTypes.h>
+#include <DataTypes.h>
 
 class Drawer
 {
@@ -16,5 +17,5 @@ public:
 
     Drawer();
 
-    void drawFrame(Mode& mode, Keyboard& keyboard, Menu& menu);
+    void drawFrame(Mode& mode, Keyboard& keyboard, Menu& menu, Calculator& calculator);
 };

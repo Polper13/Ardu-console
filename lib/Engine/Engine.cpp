@@ -1,7 +1,7 @@
 #include "Engine.h"
 
 Engine::Engine(uint8_t targetUpdateRate)
-    :interval(1000 / targetUpdateRate), drawer(), keyboard(), menu(), input()
+    :interval(1000 / targetUpdateRate), drawer(), keyboard(), menu(), input(), calculator()
 {
     mode = Mode::menu;
 }
@@ -17,7 +17,7 @@ void Engine::checkForUpdates()
         update();
 
         // draw call
-        drawer.drawFrame(mode, keyboard, menu);
+        drawer.drawFrame(mode, keyboard, menu, calculator);
     }
 }
 
@@ -29,6 +29,10 @@ void Engine::update()
         input.update();
         menu.update(input, mode);
         break;
+
+    case Mode::calculator:
+        input.update();
+        keyboard.update(input);
     
     default:
         break;

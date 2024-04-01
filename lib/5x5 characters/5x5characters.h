@@ -191,18 +191,18 @@ const unsigned char PROGMEM smallRightArrow[] =
 
 const unsigned char PROGMEM smallLeftBracket[] = 
 {
+  B00010000,
   B00100000,
-  B01000000,
-  B01000000,
-  B01000000,
   B00100000,
+  B00100000,
+  B00010000,
 };
 
 const unsigned char PROGMEM smallRightBracket[] = 
 {
+  B01000000,
   B00100000,
-  B00010000,
-  B00010000,
-  B00010000,
   B00100000,
+  B00100000,
+  B01000000,
 };

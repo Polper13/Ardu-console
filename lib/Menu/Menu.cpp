@@ -1,6 +1,6 @@
 #include "Menu.h"
 
-#include <customCharacters.h>
+#include <CustomCharacters.h>
 
 Menu::Menu()
 {

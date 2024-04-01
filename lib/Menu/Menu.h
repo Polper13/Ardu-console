@@ -4,7 +4,7 @@
 #include <Adafruit_SH1106.h>
 #include <Input.h>
 
-#include <dataTypes.h>
+#include <DataTypes.h>
 
 #define Epin 2
 #define Dpin 3

@@ -2,11 +2,12 @@
 
 #include <Adafruit_SH1106.h>
 #include <Drawer.h>
-#include <keyboard.h>
+#include <Keyboard.h>
 #include <Menu.h>
 #include <Input.h>
+#include <Calculator.h>
 
-#include <dataTypes.h>
+#include <DataTypes.h>
 
 class Engine
 {
@@ -21,6 +22,7 @@ public:
     Keyboard keyboard;
     Menu menu;
     Input input;
+    Calculator calculator;
 
     Engine(uint8_t targetUpdateRate);
 

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Adafruit_SH1106.h>
+#include <Input.h>
 
 #define Epin 2
 #define Dpin 3
@@ -26,16 +27,11 @@ private:
         'l', 'd', 'r', '=',
     };
 
-    void buttonEPressed();
-    void buttonDPressed();
-    void buttonWPressed();
-    void buttonSPressed();
-    void buttonAPressed();
-    void buttonQPressed();
-
 public:
     Keyboard();
 
     void drawKeyboard(Adafruit_SH1106& display);
     void drawCursor(Adafruit_SH1106& display, uint8_t frameIndex);
+
+    void update(Input& input);
 };

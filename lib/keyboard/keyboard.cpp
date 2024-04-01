@@ -1,71 +1,12 @@
-#include "keyboard.h"
+#include "Keyboard.h"
 #include "5x5characters.h"
-#include "customCharacters.h"
+#include "CustomCharacters.h"
 
+Keyboard::Keyboard()
 
-void Keyboard::drawCursor(Adafruit_SH1106& display, uint8_t frameIndex)
 {
-    if (frameIndex <= 3)
-    {
-        uint8_t xCalculated = cursorX * 8 + 96;
-        uint8_t yCalculated = cursorY * 8;
-        
-        if (cursorY <= 3)
-            yCalculated += 14;
-        else
-            yCalculated += 16;
-
-        // if cursor is on '='
-        if (cursorX == 3 && cursorY >= 4)
-        {
-            display.drawBitmap(120, 52, cursorSymbol, 7, 7, WHITE);
-            return;
-        }
-        
-        display.drawBitmap(xCalculated, yCalculated, cursorSymbol, 7, 7, WHITE);
-    } 
-}
-
-void Keyboard::buttonEPressed()
-{
-    Serial.println("e pressed");
-}
-
-void Keyboard::buttonDPressed()
-{
-    Serial.println("d pressed");
-
-    if (cursorX < 3)
-        cursorX++;
-}
-
-void Keyboard::buttonWPressed()
-{
-    Serial.println("w pressed");
-
-    if (cursorY > 0)
-        cursorY--;
-}
-
-void Keyboard::buttonSPressed()
-{
-    Serial.println("s pressed");
-
-    if (cursorY < 5)
-        cursorY++;
-}
-
-void Keyboard::buttonAPressed()
-{
-    Serial.println("a pressed");
-
-    if (cursorX > 0)
-        cursorX--;
-}
-
-void Keyboard::buttonQPressed()
-{
-    Serial.println("q pressed");
+    cursorX = 0;
+    cursorY = 0;
 }
 
 void Keyboard::drawKeyboard(Adafruit_SH1106& display)
@@ -128,8 +69,53 @@ void Keyboard::drawKeyboard(Adafruit_SH1106& display)
     display.drawBitmap(121, 39, smallAdd, 5, 5, WHITE);
 }
 
-Keyboard::Keyboard()
+void Keyboard::drawCursor(Adafruit_SH1106& display, uint8_t frameIndex)
 {
-    cursorX = 0;
-    cursorY = 0;
+    if (frameIndex <= 3)
+    {
+        uint8_t xCalculated = cursorX * 8 + 96;
+        uint8_t yCalculated = cursorY * 8;
+        
+        if (cursorY <= 3)
+            yCalculated += 14;
+        else
+            yCalculated += 16;
+
+        // if cursor is on '='
+        if (cursorX == 3 && cursorY >= 4)
+        {
+            display.drawBitmap(120, 52, cursorSymbol, 7, 7, WHITE);
+            return;
+        }
+        
+        display.drawBitmap(xCalculated, yCalculated, cursorSymbol, 7, 7, WHITE);
+    } 
+}
+
+void Keyboard::update(Input& input)
+{
+    if (input.ePressedDown)
+    {
+        // select smth
+    }
+    if (input.wPressedDown)
+    {
+        if (cursorY > 0)
+            cursorY--;
+    }
+    if (input.sPressedDown)
+    {
+        if (cursorY < 5)
+            cursorY++;
+    }
+    if (input.dPressedDown)
+    {
+        if (cursorX < 3)
+            cursorX++;
+    }
+    if (input.aPressedDown)
+    {
+        if (cursorX > 0)
+            cursorX--;
+    }
 }
