@@ -4,6 +4,8 @@
 #include <Adafruit_SH1106.h>
 #include <Input.h>
 
+#include <dataTypes.h>
+
 #define Epin 2
 #define Dpin 3
 #define Wpin 4
@@ -14,7 +16,7 @@
 class Menu
 {
 private:
-    const char *menuButtons[4] =
+    const char *menuButtons[4] = // to change menu change table and switch in update func
     {
         "Calculator",
         "Messenger",
@@ -29,5 +31,5 @@ public:
     Menu();
 
     void drawMenu(Adafruit_SH1106& display);
-    void update(Input& input);
+    void update(Input& input, Mode& mode);
 };

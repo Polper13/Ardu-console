@@ -6,11 +6,15 @@
 #include <Menu.h>
 #include <Input.h>
 
+#include <dataTypes.h>
+
 class Engine
 {
 private:
     unsigned long previousMillis; 
     const unsigned long interval;
+
+    Mode mode;
 
 public:
     Drawer drawer;
@@ -21,4 +25,5 @@ public:
     Engine(uint8_t targetUpdateRate);
 
     void checkForUpdates();
+    void update();
 };

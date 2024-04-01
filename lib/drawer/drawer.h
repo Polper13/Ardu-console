@@ -6,6 +6,8 @@
 #include <keyboard.h>
 #include <Menu.h>
 
+#include <dataTypes.h>
+
 class Drawer
 {
 public:
@@ -14,5 +16,5 @@ public:
 
     Drawer();
 
-    void drawFrame(Keyboard& keyboard, Menu& menu);
+    void drawFrame(Mode& mode, Keyboard& keyboard, Menu& menu);
 };

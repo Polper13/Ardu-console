@@ -56,7 +56,7 @@ void Menu::drawMenu(Adafruit_SH1106& display)
     }
 }
 
-void Menu::update(Input& input)
+void Menu::update(Input& input, Mode& mode)
 {
     // handle input
     if (input.wPressedDown && selectionIndex != 0)
@@ -64,4 +64,17 @@ void Menu::update(Input& input)
     
     if (input.sPressedDown && selectionIndex != lastButtonIndex)
         selectionIndex++;
+
+    if (input.ePressedDown)
+    {
+        switch (selectionIndex)
+        {
+        case 0:
+            mode = Mode::calculator;
+            break;
+        
+        default:
+            break;
+        }
+    }
 }
