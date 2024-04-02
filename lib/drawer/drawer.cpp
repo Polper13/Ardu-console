@@ -12,7 +12,7 @@ void Drawer::drawFrame(Mode& mode, Keyboard& keyboard, Menu& menu, Calculator& c
 {
     display.clearDisplay();
 
-    String equation = "(2+2*2)*(8-4)+(2137+69)/56+2*(21*45+2)";
+    String equation = "-6.5*2^3+20.2*2^2+5*2+7.57*2+2*2^4-2.7*2";
     
     switch (mode)
     {
@@ -24,7 +24,7 @@ void Drawer::drawFrame(Mode& mode, Keyboard& keyboard, Menu& menu, Calculator& c
         keyboard.drawKeyboard(display);
         keyboard.drawCursor(display, frameIndex);
 
-        calculator.drawEquation(display, equation, 4, 4);
+        calculator.drawEquation(display, equation);
 
         // text try
         // display.drawBitmap(5, 4, smallLeftBracket, 5, 5, WHITE);

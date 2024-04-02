@@ -11,6 +11,7 @@ private:
 public:
     Calculator();
 
-    void drawEquation(Adafruit_SH1106& display, String& equation, uint8_t x, uint8_t y);
+    void drawEquation(Adafruit_SH1106& display, String& equation);
     const unsigned char (&charToBitmap(char& character))[5];
+    uint8_t evaluateOperation(char operationSymbol);
 };

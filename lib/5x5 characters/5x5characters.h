@@ -135,6 +135,15 @@ const unsigned char PROGMEM smallDivide[] =
   B00000000,
 };
 
+const unsigned char PROGMEM smallPower[] = 
+{
+  B00000000,
+  B00100000,
+  B01010000,
+  B00000000,
+  B00000000,
+};
+
 const unsigned char PROGMEM smallEqual[] = 
 {
   B00000000,
